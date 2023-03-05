@@ -21,9 +21,7 @@ const style = {
   button: `border p-4 ml-2 bg-gradient-to-r from-[#800080] to-[#DC381F] rounded-md text-white`,
   count: `text-center font-semibold text-2xl p-2`,
   sections: `flex justify-between`,
-  button1: `border p-2 w-[275px] rounded-md text-xl font-bold bg-gradient-to-l from-[#FF0000] to-[#FF6700]`,
-  button2: `border p-2 w-[275px] rounded-md text-xl font-bold bg-gradient-to-l from-[#FFD700] to-[#FFFF33]`,
-  button3: `border p-2 w-[275px] rounded-md text-xl font-bold bg-gradient-to-l from-[#347C15] to-[#4CC417]`,
+  button1: `border p-2 w-[275px] rounded-md text-xl font-bold bg-gradient-to-l from-[#A74AC7] to-[#00CED1] `,
 };
 
 function App() {
@@ -63,14 +61,33 @@ function App() {
   };
 
   const allTodos = () => {
+    document.querySelector(".allbtn").classList.add("enabled:opacity-100");
+    document
+      .querySelector(".activebtn")
+      .classList.remove("enabled:opacity-100");
+    document.querySelector(".activebtn").classList.add("enabled:opacity-20");
+    document.querySelector(".compbtn").classList.remove("enabled:opacity-100");
+    document.querySelector(".compbtn").classList.add("enabled:opacity-20");
     fetchData(1);
   };
 
   const activeTodos = () => {
+    document.querySelector(".activebtn").classList.add("enabled:opacity-100");
+    document.querySelector(".allbtn").classList.remove("enabled:opacity-100");
+    document.querySelector(".allbtn").classList.add("enabled:opacity-20");
+    document.querySelector(".compbtn").classList.remove("enabled:opacity-100");
+    document.querySelector(".compbtn").classList.add("enabled:opacity-20");
     fetchData(2);
   };
 
   const completedTodos = () => {
+    document.querySelector(".compbtn").classList.add("enabled:opacity-100");
+    document.querySelector(".allbtn").classList.remove("enabled:opacity-100");
+    document.querySelector(".allbtn").classList.add("enabled:opacity-20");
+    document
+      .querySelector(".activebtn")
+      .classList.remove("enabled:opacity-100");
+    document.querySelector(".activebtn").classList.add("enabled:opacity-20");
     fetchData(3);
   };
 
@@ -136,13 +153,19 @@ function App() {
           <p className={style.count}>{`You have ${todos.length} Todos`}</p>
         )}
         <div className={style.sections}>
-          <button className={style.button1} onClick={allTodos}>
+          <button className={`${style.button1} allbtn`} onClick={allTodos}>
             All
           </button>
-          <button className={style.button2} onClick={activeTodos}>
+          <button
+            className={`${style.button1} focus:outline-none enabled:opacity-20 activebtn`}
+            onClick={activeTodos}
+          >
             Active
           </button>
-          <button className={style.button3} onClick={completedTodos}>
+          <button
+            className={`${style.button1} focus:outline-none enabled:opacity-20 compbtn`}
+            onClick={completedTodos}
+          >
             Completed
           </button>
         </div>
