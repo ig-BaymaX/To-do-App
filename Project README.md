@@ -4,4 +4,13 @@
 
 This is how it looks 🤩..
   
-  ![image](https://user-images.githubusercontent.com/92244286/223036112-95d9df38-fe29-457f-bf11-61af92219c34.png)
+ ![image](https://user-images.githubusercontent.com/92244286/223183046-618070ff-b92e-4376-add4-c9a91854c616.png)
+
+  This key features are:
+  - You can add, delete and edit your todos.
+  - You can view the Total number of todos.
+  - You can view the Active(incomplete) todos.
+  - You can view the Completed todos.
+  - You can store the created or edited date and time.
+  
+  Enjoyyy..
