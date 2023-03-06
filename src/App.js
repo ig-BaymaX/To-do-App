@@ -61,6 +61,7 @@ function App() {
   };
 
   const allTodos = () => {
+    document.querySelector(".allbtn").classList.remove("enabled:opacity-20");
     document.querySelector(".allbtn").classList.add("enabled:opacity-100");
     document
       .querySelector(".activebtn")
@@ -72,6 +73,7 @@ function App() {
   };
 
   const activeTodos = () => {
+    document.querySelector(".activebtn").classList.remove("enabled:opacity-20");
     document.querySelector(".activebtn").classList.add("enabled:opacity-100");
     document.querySelector(".allbtn").classList.remove("enabled:opacity-100");
     document.querySelector(".allbtn").classList.add("enabled:opacity-20");
@@ -81,6 +83,7 @@ function App() {
   };
 
   const completedTodos = () => {
+    document.querySelector(".compbtn").classList.remove("enabled:opacity-20");
     document.querySelector(".compbtn").classList.add("enabled:opacity-100");
     document.querySelector(".allbtn").classList.remove("enabled:opacity-100");
     document.querySelector(".allbtn").classList.add("enabled:opacity-20");
@@ -157,13 +160,13 @@ function App() {
             All
           </button>
           <button
-            className={`${style.button1} focus:outline-none enabled:opacity-20 activebtn`}
+            className={`${style.button1} focus:outline-none enabled:opacity-100 activebtn`}
             onClick={activeTodos}
           >
             Active
           </button>
           <button
-            className={`${style.button1} focus:outline-none enabled:opacity-20 compbtn`}
+            className={`${style.button1} focus:outline-none enabled:opacity-100 compbtn`}
             onClick={completedTodos}
           >
             Completed
