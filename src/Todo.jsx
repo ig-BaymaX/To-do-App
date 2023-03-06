@@ -3,12 +3,12 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 
 const style = {
-  li: `flex justify-between bg-slate-200 p-4 my-2 capitalize`,
+  li: `flex justify-between bg-slate-200 p-4 my-2`,
   liComplete: `flex justify-between bg-green-500 p-4 my-2 capitalize`,
-  row: `flex`,
+  row: `flex max-w-[50%]`,
   text: `ml-2 cursor-pointer`,
   textComplete: `ml-2 cursor-pointer`,
-  button: `cursor-pointer flex items-center justify-center space-x-3`,
+  button: `cursor-pointer flex items-center justify-center font-bold space-x-3`,
 };
 
 const Todo = ({ todo, toggleComplete, editTodo, deleteTodo }) => {
@@ -27,6 +27,7 @@ const Todo = ({ todo, toggleComplete, editTodo, deleteTodo }) => {
           {todo.text}
         </p>
       </div>
+      <div className={style.button}>{todo.date}</div>
       <div className={style.button}>
         <button onClick={() => editTodo(todo.id)}>{<FiEdit />}</button>
         <button onClick={() => deleteTodo(todo.id)}>{<FaRegTrashAlt />}</button>

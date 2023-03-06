@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import moment from "moment/moment";
 import { AiOutlinePlus } from "react-icons/ai";
 import Todo from "./Todo";
 import { db } from "./firebase";
@@ -21,7 +22,7 @@ const style = {
   button: `border p-4 ml-2 bg-gradient-to-r from-[#800080] to-[#DC381F] rounded-md text-white`,
   count: `text-center font-semibold text-2xl p-2`,
   sections: `flex justify-between`,
-  button1: `border p-2 w-[275px] rounded-md text-xl font-bold bg-gradient-to-l from-[#A74AC7] to-[#00CED1] `,
+  button1: `border my-3 p-2 w-[275px] rounded-md text-xl font-bold bg-gradient-to-l from-[#A74AC7] to-[#00CED1] `,
 };
 
 function App() {
@@ -31,15 +32,17 @@ function App() {
   // Create TODO
   const createTodo = async (e) => {
     e.preventDefault(e);
-    if (input === "") {
+    let text_box = document.querySelector(".text-box");
+    if (text_box.value === "") {
       alert("Please enter a valid todo");
       return;
     }
     await addDoc(collection(db, "todos"), {
+      date: moment(new Date()).format("DD-MM-YYYY (dddd), h:mm:ss a"),
       text: input,
       completed: false,
     });
-    setInput(" ");
+    setInput("");
   };
   // Read TODO from firebase
   const fetchData = (mode) => {
@@ -49,6 +52,7 @@ function App() {
       let todosArr = [];
 
       querySnapshot.forEach((doc) => {
+        // console.log(doc.data());
         todosArr.push({ ...doc.data(), id: doc.id });
       });
 
@@ -110,6 +114,7 @@ function App() {
     }
     await updateDoc(doc(db, "todos", id), {
       text: newTodo,
+      date: moment(new Date()).format("DD-MM-YYYY (dddd), h:mm:ss a"),
     });
   };
 
@@ -130,7 +135,7 @@ function App() {
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className={style.input}
+            className={`${style.input} text-box`}
             type="text"
             placeholder="Add a To-do"
           />
@@ -140,15 +145,20 @@ function App() {
         </form>
         {todos.length > 0 && (
           <ul>
-            {todos?.map((todo, index) => (
-              <Todo
-                key={index}
-                todo={todo}
-                toggleComplete={toggleComplete}
-                editTodo={editTodo}
-                deleteTodo={deleteTodo}
-              />
-            ))}
+            {todos?.map(
+              (todo, index) => (
+                console.log(todo),
+                (
+                  <Todo
+                    key={index}
+                    todo={todo}
+                    toggleComplete={toggleComplete}
+                    editTodo={editTodo}
+                    deleteTodo={deleteTodo}
+                  />
+                )
+              )
+            )}
           </ul>
         )}
 
