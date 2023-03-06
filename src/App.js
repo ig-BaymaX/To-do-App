@@ -152,7 +152,9 @@ function App() {
           </ul>
         )}
 
-        {todos.length < 1 ? null : (
+        {todos.length < 1 ? null : todos.length == 1 ? (
+          <p className={style.count}>{`You have ${todos.length} Todo`}</p>
+        ) : (
           <p className={style.count}>{`You have ${todos.length} Todos`}</p>
         )}
         <div className={style.sections}>
