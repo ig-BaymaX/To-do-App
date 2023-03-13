@@ -65,36 +65,36 @@ function App() {
   };
 
   const allTodos = () => {
-    document.querySelector(".allbtn").classList.remove("enabled:opacity-20");
+    document.querySelector(".allbtn").classList.remove("enabled:opacity-60");
     document.querySelector(".allbtn").classList.add("enabled:opacity-100");
     document
       .querySelector(".activebtn")
       .classList.remove("enabled:opacity-100");
-    document.querySelector(".activebtn").classList.add("enabled:opacity-20");
+    document.querySelector(".activebtn").classList.add("enabled:opacity-60");
     document.querySelector(".compbtn").classList.remove("enabled:opacity-100");
-    document.querySelector(".compbtn").classList.add("enabled:opacity-20");
+    document.querySelector(".compbtn").classList.add("enabled:opacity-60");
     fetchData(1);
   };
 
   const activeTodos = () => {
-    document.querySelector(".activebtn").classList.remove("enabled:opacity-20");
+    document.querySelector(".activebtn").classList.remove("enabled:opacity-60");
     document.querySelector(".activebtn").classList.add("enabled:opacity-100");
     document.querySelector(".allbtn").classList.remove("enabled:opacity-100");
-    document.querySelector(".allbtn").classList.add("enabled:opacity-20");
+    document.querySelector(".allbtn").classList.add("enabled:opacity-60");
     document.querySelector(".compbtn").classList.remove("enabled:opacity-100");
-    document.querySelector(".compbtn").classList.add("enabled:opacity-20");
+    document.querySelector(".compbtn").classList.add("enabled:opacity-60");
     fetchData(2);
   };
 
   const completedTodos = () => {
-    document.querySelector(".compbtn").classList.remove("enabled:opacity-20");
+    document.querySelector(".compbtn").classList.remove("enabled:opacity-60");
     document.querySelector(".compbtn").classList.add("enabled:opacity-100");
     document.querySelector(".allbtn").classList.remove("enabled:opacity-100");
-    document.querySelector(".allbtn").classList.add("enabled:opacity-20");
+    document.querySelector(".allbtn").classList.add("enabled:opacity-60");
     document
       .querySelector(".activebtn")
       .classList.remove("enabled:opacity-100");
-    document.querySelector(".activebtn").classList.add("enabled:opacity-20");
+    document.querySelector(".activebtn").classList.add("enabled:opacity-60");
     fetchData(3);
   };
 
