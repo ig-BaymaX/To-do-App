@@ -108,6 +108,9 @@ function App() {
   // Edit TODO
   const editTodo = async (id) => {
     const newTodo = prompt("Enter new todo");
+    if (newTodo === null) {
+      return;
+    }
     if (newTodo === "") {
       alert("Please enter a valid todo");
       return;
