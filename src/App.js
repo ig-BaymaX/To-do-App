@@ -19,10 +19,10 @@ const style = {
   heading: `text-4xl text-black font-extrabold text-center p-2`,
   form: `flex justify-between`,
   input: `border p-2 w-full text-xl rounded-md`,
-  button: `border p-4 ml-2 bg-gradient-to-r from-[#800080] to-[#DC381F] rounded-md text-white`,
+  button: `hover:scale-110 border p-4 ml-2 bg-gradient-to-r from-[#800080] to-[#DC381F] rounded-md text-white`,
   count: `text-center font-semibold text-2xl p-2`,
   sections: `flex justify-between`,
-  button1: `border my-3 p-2 w-[275px] rounded-md text-xl font-bold bg-gradient-to-l from-[#A74AC7] to-[#00CED1] `,
+  button1: `hover:scale-110 border my-3 p-2 w-[260px] rounded-md text-xl font-bold bg-gradient-to-l from-[#A74AC7] to-[#00CED1] `,
 };
 
 function App() {
@@ -65,36 +65,36 @@ function App() {
   };
 
   const allTodos = () => {
-    document.querySelector(".allbtn").classList.remove("enabled:opacity-60");
+    document.querySelector(".allbtn").classList.remove("enabled:opacity-50");
     document.querySelector(".allbtn").classList.add("enabled:opacity-100");
     document
       .querySelector(".activebtn")
       .classList.remove("enabled:opacity-100");
-    document.querySelector(".activebtn").classList.add("enabled:opacity-60");
+    document.querySelector(".activebtn").classList.add("enabled:opacity-50");
     document.querySelector(".compbtn").classList.remove("enabled:opacity-100");
-    document.querySelector(".compbtn").classList.add("enabled:opacity-60");
+    document.querySelector(".compbtn").classList.add("enabled:opacity-50");
     fetchData(1);
   };
 
   const activeTodos = () => {
-    document.querySelector(".activebtn").classList.remove("enabled:opacity-60");
+    document.querySelector(".activebtn").classList.remove("enabled:opacity-50");
     document.querySelector(".activebtn").classList.add("enabled:opacity-100");
     document.querySelector(".allbtn").classList.remove("enabled:opacity-100");
-    document.querySelector(".allbtn").classList.add("enabled:opacity-60");
+    document.querySelector(".allbtn").classList.add("enabled:opacity-50");
     document.querySelector(".compbtn").classList.remove("enabled:opacity-100");
-    document.querySelector(".compbtn").classList.add("enabled:opacity-60");
+    document.querySelector(".compbtn").classList.add("enabled:opacity-50");
     fetchData(2);
   };
 
   const completedTodos = () => {
-    document.querySelector(".compbtn").classList.remove("enabled:opacity-60");
+    document.querySelector(".compbtn").classList.remove("enabled:opacity-50");
     document.querySelector(".compbtn").classList.add("enabled:opacity-100");
     document.querySelector(".allbtn").classList.remove("enabled:opacity-100");
-    document.querySelector(".allbtn").classList.add("enabled:opacity-60");
+    document.querySelector(".allbtn").classList.add("enabled:opacity-50");
     document
       .querySelector(".activebtn")
       .classList.remove("enabled:opacity-100");
-    document.querySelector(".activebtn").classList.add("enabled:opacity-60");
+    document.querySelector(".activebtn").classList.add("enabled:opacity-50");
     fetchData(3);
   };
 
