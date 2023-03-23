@@ -6,9 +6,9 @@ const style = {
   li: `flex justify-between bg-slate-200 p-4 my-2`,
   liComplete: `flex justify-between bg-green-500 p-4 my-2 capitalize`,
   row: `flex max-w-[50%]`,
-  text: `ml-2 cursor-pointer`,
+  text: `ml-2 cursor-pointer font-bold`,
   textComplete: `ml-2 cursor-pointer`,
-  button: `cursor-pointer flex items-center justify-center font-bold space-x-3`,
+  button: `cursor-pointer flex items-center justify-center space-x-3`,
 };
 
 const Todo = ({ todo, toggleComplete, editTodo, deleteTodo }) => {
